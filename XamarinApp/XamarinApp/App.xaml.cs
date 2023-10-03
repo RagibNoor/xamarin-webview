@@ -22,7 +22,7 @@ namespace XamarinApp
 			localServerService = new LoadLocalServer(outPutBasePath, NSBundle.MainBundle.ResourcePath);
 			var ct = new CancellationTokenSource();
             
-			MainPage = new MainPage();
+			MainPage = new MainPage(NSBundle.MainBundle.ResourcePath);
 		}
 
 		protected override void OnStart ()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -6,28 +7,28 @@ namespace XamarinApp
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+		public MainPage(string resourcePath)
 		{
            
             InitializeComponent();
-            WebView.Source = "http://localhost:4200/";
-            webLIink.Text = "http://localhost:4200/";
+            var webserverUrl = new UrlWebViewSource
+            {
+                Url = "http://localhost:4200/"
+            };
+
+            WebView.Source = webserverUrl;
+            string htmlIndexFilePath = "dist/index.html"; 
+            var source = new UrlWebViewSource
+            {
+                Url = Path.Combine(resourcePath, htmlIndexFilePath)
+            };
+            WebViewCustom.Source = source;
             Authenticate();
         }
 
-        private void LoadPortalApp(string url, string frontEndServerUrl)
-        {
-            //WebView.BaseUrl = $"{frontEndServerUrl}/";
-          //  WebView.Source = $"{frontEndServerUrl}/portal/" + url;
-        }
-        private void LoadKpiDashboardApp(string url, string frontEndServerUrl)
-        {
-            //WebView.BaseUrl = $"{frontEndServerUrl}/";
-          //  WebView.Source = $"{frontEndServerUrl}/kpidashboard/" + url;
-        }
         private void Authenticate()
         {
-           // DisplayWebView();
+            DisplayWebView();
         }
 
 
@@ -35,7 +36,7 @@ namespace XamarinApp
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-               //WebView.IsVisible = true;
+               WebView.IsVisible = true;
                WebView.Reload();
             });
         }
@@ -64,7 +65,7 @@ namespace XamarinApp
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
           //  WebView.IsVisible = false;
-            WebView.Source = webLIink.Text;
+           // WebView.Source = webLIink.Text;
             this.DisplayWebView();
         }
     }
