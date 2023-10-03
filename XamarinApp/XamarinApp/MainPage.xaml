@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wv="clr-namespace:Xam.Plugin.WebView.Abstractions;assembly=Xam.Plugin.WebView.Abstractions"
+             x:Class="XamarinApp.MainPage">
+<StackLayout Padding="0,100,0,0">
+        <Entry Placeholder="Enter text" x:Name="webLIink"/>
+        <Button Background="blue"
+                TextColor="red"
+                Clicked="Button_Clicked"/>
+        <!--<wv:FormsWebView x:Name="WebView" ContentType="LocalFile" Grid.Row="0" Grid.Column="0"/>-->
+        <ScrollView>
+            <WebView
+            x:Name="WebView"
+            WidthRequest="100"
+            HeightRequest="1000"
+            IsVisible="true"
+            Navigating="Handle_OnNavigationStarted"
+            />
+        </ScrollView>
+        
+    </StackLayout>
+</ContentPage>
