@@ -166,7 +166,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-   <PackageReference Include="EmbedIO">
+    <PackageReference Include="EmbedIO">
       <Version>3.5.2</Version>
     </PackageReference>
     <PackageReference Include="Npgsql">
@@ -233,7 +233,10 @@
       <Project>{D0FAE3C1-C847-4DDD-B96D-0E807FDF2C99}</Project>
       <Name>LocalServer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XamarinApp\XamarinApp.csproj">
+      <Project>{8cf5ff2c-cb53-434b-b383-cb693fc13a9c}</Project>
+      <Name>XamarinApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\XamarinApp\XamarinApp.projitems" Label="Shared" />
 </Project>

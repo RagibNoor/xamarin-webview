@@ -1,6 +1,5 @@
 using System;
 using System.Threading;
-using Foundation;
 using OfflineApp.EmbedIO.LocalServer;
 using OfflineApp.interfaces;
 using Xamarin.Forms;
@@ -19,7 +18,7 @@ namespace XamarinApp
 			// you can specify it here.
 			var BundleResourcePath = DependencyService.Get<IResourcePath>().GetResourcePath();
             var outPutBasePath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-			localServerService = new LoadLocalServer(outPutBasePath, NSBundle.MainBundle.ResourcePath);
+			localServerService = new LoadLocalServer(outPutBasePath, BundleResourcePath);
 			var ct = new CancellationTokenSource();
             
 			MainPage = new MainPage();
