@@ -1,4 +1,4 @@
-﻿namespace OfflineApp.interfaces
+﻿namespace XamarinApp
 {
     public interface IResourcePath
     {

@@ -1,9 +1,8 @@
 ﻿using Foundation;
-using OfflineApp.interfaces;
-using OfflineApp.iOS.Implementations;
+using XamarinApp.iOS;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ResourcePathService))]
-namespace OfflineApp.iOS.Implementations
+namespace XamarinApp.iOS
 {
     public class ResourcePathService: IResourcePath
     {

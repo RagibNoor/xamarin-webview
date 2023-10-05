@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
-using OfflineApp.EmbedIO.LocalServer;
-using OfflineApp.interfaces;
+using LocalServer;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

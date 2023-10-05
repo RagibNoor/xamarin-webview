@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using EmbedIO;
 using EmbedIO.Routing;
 using EmbedIO.WebApi;
-using System.Threading;
 
-
-namespace OfflineApp.EmbedIO.LocalServer
+namespace LocalServer
 {
     public class MyFavouriteProgrammingLanguage : WebApiController
     {
@@ -17,7 +16,7 @@ namespace OfflineApp.EmbedIO.LocalServer
         {
             try
             {
-
+                Console.WriteLine("in controller");
                 var watch = new System.Diagnostics.Stopwatch();
 
                 watch.Start();

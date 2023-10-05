@@ -1,6 +1,5 @@
 ﻿using System;
 using Foundation;
-using OfflineApp.EmbedIO.LocalServer;
 using UIKit;
 
 namespace XamarinApp.iOS

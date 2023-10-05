@@ -1,22 +1,18 @@
 ﻿using System;
 using System.IO;
-using System.Reactive;
-using System.Reflection;
 using System.Text;
-using System.Threading;
 using EmbedIO;
 using EmbedIO.Files;
 using EmbedIO.Security;
 using EmbedIO.Utilities;
 using EmbedIO.WebApi;
-using LocalServer;
 
-
-namespace OfflineApp.EmbedIO.LocalServer
+namespace LocalServer
 {
     public class LoadLocalServer
     {
         private WebServer staticFilesWebServer;
+        private WebServer applicationWebServer;
 
         public LoadLocalServer(string outPutBasePath, string location)
         {
@@ -47,7 +43,19 @@ namespace OfflineApp.EmbedIO.LocalServer
                     }
                 });
                 staticFilesWebServer.RunAsync();
-
+                     this.applicationWebServer = new WebServer(o => o
+                        .WithUrlPrefix("http://localhost:8080")
+                        .WithMode(HttpListenerMode.EmbedIO))
+                    .WithIPBanning(o => o
+                        .WithMaxRequestsPerSecond()
+                        .WithRegexRules("HTTP exception 404"));
+                this.applicationWebServer
+                    .WithLocalSessionManager()
+                    .WithCors()
+                    .WithWebApi(UrlPath.Root,
+                (module => { module.WithController<MyFavouriteProgrammingLanguage>(); }));
+                // .WithModule(new ActionModule("/", HttpVerbs.Any, ctx => ctx.SendDataAsync(new { Message = "Error" })));
+                applicationWebServer.RunAsync().ConfigureAwait(false);
             }
             catch (Exception ex)
             {

@@ -20,7 +20,7 @@
             />
 		</Grid>
 
-		<!--<Grid Grid.Row="2" RowDefinitions="Auto, *">
+		<Grid Grid.Row="2" RowDefinitions="Auto, *">
 			<Label Text="Custom Web View with static location" />
 			<xamarinapp:CustomWebView
             x:Name="WebViewCustom"
@@ -28,7 +28,7 @@
 			 HorizontalOptions="Fill"
 			 VerticalOptions="Fill" 
             />
-		</Grid>-->
+		</Grid>
 
 
 	</Grid>
