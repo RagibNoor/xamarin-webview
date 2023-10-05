@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using EmbedIO.WebApi;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using EmbedIO.Files;

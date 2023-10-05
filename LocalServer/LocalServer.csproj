@@ -20,7 +20,6 @@
       <PackageReference Include="Autofac" Version="4.9.4" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0" />
       <PackageReference Include="AWSSDK.S3" Version="3.7.7.15" />
-    <PackageReference Include="EmbedIO" Version="3.5.2" />
     <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
@@ -32,5 +31,9 @@
       <PackageReference Include="Mono.Data.Sqlite.Portable" Version="1.0.3.5" />
       <PackageReference Include="SQLite.Interop.dll" Version="1.0.103" />
       <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmbedIO\EmbedIO.csproj" />
   </ItemGroup>
 </Project>
