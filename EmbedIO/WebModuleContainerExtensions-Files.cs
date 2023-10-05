@@ -81,6 +81,7 @@ namespace EmbedIO
             }
             catch
             {
+                Console.WriteLine("with static file");
                 provider.Dispose();
                 throw;
             }

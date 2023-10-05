@@ -138,6 +138,7 @@ namespace EmbedIO
         protected override void Prepare(CancellationToken cancellationToken)
         {
             Listener.Start();
+            Console.WriteLine("Started HTTP Listener");
             "Started HTTP Listener".Info(LogSource);
 
             // close port when the cancellation token is cancelled
@@ -182,6 +183,7 @@ namespace EmbedIO
                 urlPrefix = urlPrefix.ToLowerInvariant();
 
                 listener.AddPrefix(urlPrefix);
+                Console.WriteLine("Web server prefix '{urlPrefix}' added.");
                 $"Web server prefix '{urlPrefix}' added.".Info(LogSource);
             }
 

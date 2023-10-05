@@ -289,14 +289,17 @@ namespace EmbedIO
             }
             catch (OperationCanceledException) when (context.CancellationToken.IsCancellationRequested)
             {
+                Console.WriteLine($"[{context.Id}] Operation canceled. and [{LogSource}]");
                 $"[{context.Id}] Operation canceled.".Debug(LogSource);
             }
             catch (HttpListenerException ex)
             {
+                Console.WriteLine($"[{context.Id}] Listener exception.");
                 ex.Log(LogSource, $"[{context.Id}] Listener exception.");
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"[{context.Id}] Fatal exception.");
                 ex.Log(LogSource, $"[{context.Id}] Fatal exception.");
                 OnFatalException();
             }
