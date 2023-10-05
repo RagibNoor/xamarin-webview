@@ -113,6 +113,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\dist\**" />
     <Compile Include="ResourcePathService.cs" />
+    <Compile Include="CustomWebViewRenderer.cs" />
+    <Compile Include="CustomWebViewDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -237,6 +239,12 @@
       <Project>{8cf5ff2c-cb53-434b-b383-cb693fc13a9c}</Project>
       <Name>XamarinApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dist\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dist\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

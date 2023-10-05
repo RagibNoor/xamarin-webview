@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Reactive;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using EmbedIO;
 using EmbedIO.Files;
@@ -24,13 +26,28 @@ namespace OfflineApp.EmbedIO.LocalServer
                 location = Path.Combine(location, "dist");
                 staticFilesWebServer = new WebServer(o => o
                         .WithUrlPrefix(GenerateFrontEndServerUrl())
-                        .WithMode(HttpListenerMode.EmbedIO))
+                        .WithMode(HttpListenerMode.Microsoft))
                     .WithLocalSessionManager()
                     .WithStaticFolder("/", location, true, m => m
                         .WithContentCaching(true)
                     );
 
-                staticFilesWebServer.RunAsync().ConfigureAwait(false);
+                staticFilesWebServer.HandleHttpException(async (context, exception) =>
+                {
+                    context.Response.StatusCode = exception.StatusCode;
+
+                    switch (exception.StatusCode)
+                    {
+                        case 404:
+                            await context.SendStringAsync("Your content", "text/html", Encoding.UTF8);
+                            break;
+                        default:
+                            await HttpExceptionHandler.Default(context, exception);
+                            break;
+                    }
+                });
+                staticFilesWebServer.RunAsync();
+
             }
             catch (Exception ex)
             {
@@ -41,7 +58,7 @@ namespace OfflineApp.EmbedIO.LocalServer
         public string GenerateFrontEndServerUrl()
         {
 
-            var dynamicFrontEndPortNumber = 4200;
+            var dynamicFrontEndPortNumber = 44200;
             return $"http://localhost:{dynamicFrontEndPortNumber}";
         }
     }

@@ -13,16 +13,16 @@ namespace XamarinApp
             InitializeComponent();
             var webserverUrl = new UrlWebViewSource
             {
-                Url = "http://localhost:4200/"
+                Url = "http://192.168.0.105:8080/portal"
             };
 
             WebView.Source = webserverUrl;
-            string htmlIndexFilePath = "dist/index.html"; 
-            var source = new UrlWebViewSource
-            {
-                Url = Path.Combine(resourcePath, htmlIndexFilePath)
-            };
-            WebViewCustom.Source = source;
+            //string htmlIndexFilePath = "dist/index.html"; 
+            //var source = new UrlWebViewSource
+            //{
+            //    Url = Path.Combine(resourcePath, htmlIndexFilePath)
+            //};
+            //WebViewCustom.Source = source;
             Authenticate();
         }
 
