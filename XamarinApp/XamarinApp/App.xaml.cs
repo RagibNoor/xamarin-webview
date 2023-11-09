@@ -20,8 +20,8 @@ namespace XamarinApp
             var outPutBasePath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			localServerService = new LoadLocalServer(outPutBasePath, BundleResourcePath);
 			var ct = new CancellationTokenSource();
-            
-			MainPage = new MainPage(NSBundle.MainBundle.ResourcePath);
+
+            MainPage = new MainPage(outPutBasePath);
 		}
 
 		protected override void OnStart ()
