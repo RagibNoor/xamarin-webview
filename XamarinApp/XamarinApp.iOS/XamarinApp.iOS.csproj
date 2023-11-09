@@ -72,7 +72,18 @@
     <CodesignKey>iPhone Distribution: IQVIA Inc. (Enterprise)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
+    <BuildIpa>true</BuildIpa>
+    <IpaMetadata>Info.plist</IpaMetadata>
+    <IpaPackageName>com.iqvia.in.pmie2e-xamarin-dev-usv</IpaPackageName>
     <CodesignProvision>BengaluruProdWildcardProfile</CodesignProvision>
+    <OptimizePNGs>false</OptimizePNGs>
+    <MtouchExtraArgs>-v -v -v -v --dlsym:Microsoft.Win32.Registry.dll</MtouchExtraArgs>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity>2</MtouchVerbosity>
+    <MtouchVerbosity>2</MtouchVerbosity>
+    <OnDemandResourcesInitialInstallTags>
+    </OnDemandResourcesInitialInstallTags>
+
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
