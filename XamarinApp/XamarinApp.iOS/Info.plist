@@ -2,9 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
 	<key>UIDeviceFamily</key>
@@ -12,39 +20,51 @@
 		<integer>1</integer>
 		<integer>2</integer>
 	</array>
+	<key>MinimumOSVersion</key>
+	<string>9.0</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Assets.xcassets/LaunchImages.launchimage</string>
+	<key>CFBundleName</key>
+	<string>Xamarin Dev</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Enable biometrics</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need microphone access for voice record</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>xamarindev</string>
+			</array>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>MinimumOSVersion</key>
-	<string>14.0</string>
-	<key>CFBundleDisplayName</key>
-	<string>XamarinApp</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Need speech recognition permission</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.iqvia.in.test.testApp</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>CFBundleName</key>
-	<string>XamarinApp</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<string>com.iqvia.in.pmie2e-xamarin-dev-usv</string>
+	<key>CFBundleDisplayName</key>
+	<string>Xamarin Dev U</string>
+	<key>PMIE2ESettings</key>
+	<string>ewogICJDb25maWdBcGlVcmwiOiAiIiwKICAiRGF0YUFwaVVybCI6ICIiLAogICJBdXRoZW50aWNhdGlvbkFwaVVybCI6ICJodHRwczovL2twaWxpYjAxLXN0YWdlMDEta3BpMDQtZXVpLnFhLmtwaS5vYS5pcXZpYS5jb20vYXV0aC9hcGkvdjEvIiwKICAiRXhwb3J0QXBpVXJsIjogIiIsCiAgIkF1dGhlbnRpY2F0aW9uU2V0dGluZ3MiOiB7CiAgICAiQXV0aG9yaXR5IjogImh0dHBzOi8va3BpbGliMDEtc3RhZ2UwMS1rcGkwNC1ldWkucWEua3BpLm9hLmlxdmlhLmNvbS9hdXRoIiwKICAgICJSZXF1aXJlSHR0cHMiOiBmYWxzZSwKICAgICJDbGllbnRJZCI6ICJwbWlfZ2F0ZXdheV9zZXJ2aWNlIiwKICAgICJDbGllbnRTZWNyZXQiOiAiIiwKICAgICJBcGlUb1JlcXVlc3QiOiAiYXV0aGVudGljYXRpb25fcmVhZF9hY2Nlc3MgY29uZmlnX3JlYWRfYWNjZXNzIGRhdGFfcmVhZF9hY2Nlc3MiLAogICAgIlNraXBBdXRoZW50aWNhdGlvbiI6IGZhbHNlLAogICAgIkRlZmF1bHRSZWFkU2NvcGUiOiBudWxsLAogICAgIkRlZmF1bHRSZXN0cmljdGVkU2NvcGUiOiBudWxsLAogICAgIkRlZmF1bHRXcml0ZVNjb3BlIjogbnVsbCwKICAgICJJc3N1ZXIiOiBudWxsCiAgfSwKICAiU3FsR2VuQXBpVXJsIjogImh0dHBzOi8va3BpbGliMDEtc3RhZ2UwMS1rcGkwNC1ldWkucWEua3BpLm9hLmlxdmlhLmNvbS9zcWxnZW4vYXBpL3YxL2FwcHN5bmMvIiwKICAiQXBwVmVyc2lvbiI6ICIxOS4xLjAuMTMiCn0K</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1</string>
+	<string>19.1.0</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>CFBundleVersion</key>
+	<string>17</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

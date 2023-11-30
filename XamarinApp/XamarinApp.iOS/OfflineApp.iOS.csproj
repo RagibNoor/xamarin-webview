@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E0E9D52E-E0A5-49DA-AF86-211CC499796D}</ProjectGuid>
+    <ProjectGuid>{71793684-2E97-42E0-8E59-86148F4942BB}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>XamarinApp.iOS</RootNamespace>
+    <RootNamespace>OfflineApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>XamarinApp.iOS</AssemblyName>
+    <AssemblyName>OfflineApp.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -24,11 +24,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>x86_64</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>Automatic</CodesignProvision>
+    <CodesignKey>iPhone Distribution: IQVIA Inc. (Enterprise)</CodesignKey>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchExtraArgs>-v -v -v -v --dlsym:Microsoft.Win32.Registry.dll</MtouchExtraArgs>
+    <CodesignEntitlements>Info.plist</CodesignEntitlements>
+    <OptimizePNGs>false</OptimizePNGs>
+    <ExternalConsole>false</ExternalConsole>
+    <MtouchUseLlvm>
+    </MtouchUseLlvm>
+    <CodesignProvision>BengaluruProdWildcardProfile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -36,11 +44,15 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchLink>None</MtouchLink>
-    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: QuintilesIMS Incorporated (Enterprise)</CodesignKey>
+    <CodesignProvision>BangaloreAllTeamsWildCardProfile</CodesignProvision>
+    <LangVersion>Default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -50,16 +62,22 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>Apple Development: Ragib Noor (RH7WLD6N25)</CodesignKey>
+    <CodesignKey>iPhone Distribution: IQVIA Inc. (Enterprise)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignEntitlements>
-    </CodesignEntitlements>
-    <CodesignProvision>iOS Team Provisioning Profile: *</CodesignProvision>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <MtouchLink>None</MtouchLink>
-    <MtouchInterpreter>-all</MtouchInterpreter>
-    <MtouchSdkVersion>16.4</MtouchSdkVersion>
+    <MtouchExtraArgs>-v -v -v -v --dlsym:Microsoft.Win32.Registry.dll</MtouchExtraArgs>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <OptimizePNGs>false</OptimizePNGs>
+    <Nullable>
+    </Nullable>
+    <CodesignProvision>BengaluruProdWildcardProfile</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <IpaMetadata>Info.plist</IpaMetadata>
+    <IpaPackageName>com.iqvia.in.pmie2e-xamarin-dev-usv</IpaPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -76,16 +94,13 @@
     <IpaMetadata>Info.plist</IpaMetadata>
     <IpaPackageName>com.iqvia.in.pmie2e-xamarin-dev-usv</IpaPackageName>
     <CodesignProvision>BengaluruProdWildcardProfile</CodesignProvision>
-    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchExtraArgs>-v -v -v -v --dlsym:Microsoft.Win32.Registry.dll</MtouchExtraArgs>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity>2</MtouchVerbosity>
     <MtouchVerbosity>2</MtouchVerbosity>
     <OnDemandResourcesInitialInstallTags>
     </OnDemandResourcesInitialInstallTags>
-
-    <MtouchUseLlvm>true</MtouchUseLlvm>
-    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
-    <MtouchExtraArgs>--gcc_flags="-fobjc-arc"</MtouchExtraArgs>
+    <OptimizePNGs>false</OptimizePNGs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -96,10 +111,14 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>iOS Team Provisioning Profile: com.streamstech.PMIE2E1</CodesignProvision>
+    <CodesignKey>iPhone Developer: jantrik.technologies@icloud.com (YZBK5G6ZJC)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -114,20 +133,45 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Implementations\AppOAuthConfigurationService.cs" />
+    <Compile Include="Implementations\AppStorageSizeService.cs" />
+    <Compile Include="Implementations\CustomWebViewRenderer.cs" />
+    <Compile Include="Implementations\DeviceAuthenticationService.cs" />
+    <Compile Include="Implementations\GeoLocationService.cs" />
+    <Compile Include="Implementations\IOSAppVersionService.cs" />
+    <Compile Include="Implementations\OpenExternalUrl.cs" />
+    <Compile Include="Implementations\OpenExternalApp.cs" />
+    <Compile Include="Implementations\RecordAudioService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <None Include="Entitlements.plist">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Entitlements.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\dist\**" />
-    <Compile Include="ResourcePathService.cs" />
+    <Compile Include="Implementations\ResourcePathService.cs" />
+    <Compile Include="Implementations\DeviceIdentifierService.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\CustomCacheManager.cs" />
+    <Compile Include="Implementations\OfflineAuthHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Loader.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Loader.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
@@ -147,40 +191,43 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-small.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <InterfaceDefinition Include="ViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.2.1.12\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EmbedIO">
-      <Version>3.5.2</Version>
+      <Version>3.4.3</Version>
     </PackageReference>
     <PackageReference Include="Npgsql">
       <Version>4.1.12</Version>
@@ -204,7 +251,7 @@
       <Version>3.1.12</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2612</Version>
+      <Version>4.6.0.1180</Version>
     </PackageReference>
     <PackageReference Include="System.Reflection.Emit">
       <Version>4.3.0</Version>
@@ -242,14 +289,34 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\LocalServer\LocalServer.csproj">
-      <Project>{D0FAE3C1-C847-4DDD-B96D-0E807FDF2C99}</Project>
-      <Name>LocalServer</Name>
-    </ProjectReference>
+    <BundleResource Include="Resources\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\logo_iqvia_big.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <LinkDescription Include="LinkerExclusions.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\XamarinApp\XamarinApp.csproj">
       <Project>{8cf5ff2c-cb53-434b-b383-cb693fc13a9c}</Project>
       <Name>XamarinApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
