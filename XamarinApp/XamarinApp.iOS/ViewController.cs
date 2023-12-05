@@ -30,7 +30,7 @@ namespace OfflineApp.iOS
             base.ViewDidLoad();
 
             // Create new image view and add it to the view.
-            //var logoImage = new UIImageView(UIImage.FromBundle("logo_iqvia_big.png"));
+            var logoImage = new UIImageView(UIImage.FromBundle("logo_iqvia_big.png"));
 
 
             var activity = new UIActivityIndicatorView();
@@ -39,19 +39,19 @@ namespace OfflineApp.iOS
 
             View.AddSubview(activity);
             View.BringSubviewToFront(activity);
-            //View.AddSubview(logoImage);
+            View.AddSubview(logoImage);
 
             // logo position
-            //logoImage.TranslatesAutoresizingMaskIntoConstraints = false;
-            //logoImage.CenterXAnchor.ConstraintEqualTo(this.View.CenterXAnchor).Active = true;
-            //logoImage.CenterYAnchor.ConstraintEqualTo(this.View.CenterYAnchor).Active = true;
-            //logoImage.WidthAnchor.ConstraintEqualTo(260).Active = true;
-            //logoImage.HeightAnchor.ConstraintEqualTo(108).Active = true;
+            logoImage.TranslatesAutoresizingMaskIntoConstraints = false;
+            logoImage.CenterXAnchor.ConstraintEqualTo(this.View.CenterXAnchor).Active = true;
+            logoImage.CenterYAnchor.ConstraintEqualTo(this.View.CenterYAnchor).Active = true;
+            logoImage.WidthAnchor.ConstraintEqualTo(260).Active = true;
+            logoImage.HeightAnchor.ConstraintEqualTo(108).Active = true;
 
             //activity indicator position
             activity.TranslatesAutoresizingMaskIntoConstraints = false;
             activity.CenterXAnchor.ConstraintEqualTo(this.View.CenterXAnchor).Active = true;
-            activity.CenterYAnchor.ConstraintEqualTo(this.View.CenterYAnchor).Active = true;
+            activity.CenterYAnchor.ConstraintEqualTo(this.View.CenterYAnchor, 54f).Active = true;
             activity.WidthAnchor.ConstraintEqualTo(102).Active = true;
             activity.HeightAnchor.ConstraintEqualTo(50).Active = true;
 
