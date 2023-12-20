@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wv="clr-namespace:Xam.Plugin.WebView.Abstractions;assembly=Xam.Plugin.WebView.Abstractions"
+             x:Class="XamarinApp.MainPage">
+
+    <Grid RowDefinitions="Auto, 5*, 5*">
+		<Label Margin="0,60,0,0"
+		       HorizontalOptions="Center"
+		       Text="iOS WebView Bug" />
+		<Grid Grid.Row="1" RowDefinitions="Auto, *">
+			<Label Text="Web View with running web server" />
+			<WebView
+            x:Name="WebView"
+             Grid.Row="1"
+			 HorizontalOptions="Fill"
+			 VerticalOptions="Fill" 
+            />
+		</Grid>
+
+		<Grid Grid.Row="2" RowDefinitions="Auto, *">
+			<Label Text="Custom Web View with static location" />
+			<WebView
+            x:Name="WebViewCustom"
+             Grid.Row="1"
+			 HorizontalOptions="Fill"
+			 VerticalOptions="Fill" 
+            />
+		</Grid>
+
+
+	</Grid>
+</ContentPage>
