@@ -17,12 +17,12 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignProvision>Automatic</CodesignProvision>
-    <RuntimeIdentifiers>iossimulator-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>ios-arm64</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <MtouchLink>None</MtouchLink>
     <ConsolePause>false</ConsolePause>
-    <RuntimeIdentifiers>iossimulator-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>ios-arm64</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <ConsolePause>false</ConsolePause>
