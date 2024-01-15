@@ -39,7 +39,7 @@ namespace XamarinApp.iOSCore
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            SQLitePCL.Batteries.Init();
+            // SQLitePCL.Batteries.Init();
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             var controller = new ViewController();
             controller.View.BackgroundColor = UIColor.White;
@@ -61,13 +61,13 @@ namespace XamarinApp.iOSCore
                 System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
                 Thread.CurrentThread.CurrentCulture = cultureInfo;
             });
-           
 
-            return true;
-        }
+
+        //    return true;
+        //}
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            if (Microsoft.Maui.Controls.Application.Current is App myApp && null != url)
+            if (Microsoft.Maui.Controls.Application.Current is App && null != url)
             {
                // myApp.OnAppLinkRequestReceived(new Uri(url.AbsoluteString));
             }
